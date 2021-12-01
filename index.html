@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width= , initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- 標題 -->
+    <header>
+      <nav>
+        <span class="nav-title">
+          師大商圈點餐系統
+        </span>
+      </nav>
+    </header>
+    
+    <!-- 菜單區塊 -->
+    <div id="menu" class="row">
+    </div>
+
+   <style>
+    hr.style-one {
+    margin: 20px;
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+</style>
+<hr class="style-one" />
+
+    <!-- 購物車清單 -->
+    <div class = "cartbucket">
+    <h4 class="my-3">購物車清單</h4>
+    <div class="col-6">
+      <ul id="cart" class="list-group"></ul>
+    </div>
+  
+    <h5 class="my-3">總金額：<span id="total-amount">--</span></h5>
+    <button id="submit-button" type="button" class="btn btn-primary">送出訂單</button>
+    </div>
+  </div>
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>

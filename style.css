@@ -1,0 +1,47 @@
+html,body {
+	font-family: 'Lato','Noto Sans TC', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#menu{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card{
+  margin:20px;
+}
+
+.card-img-top{
+  max-height: 200px;
+}
+
+header{
+	height: 60px;
+	color: black;
+	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.3);
+}
+
+nav{
+  height: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nav-title{
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.cartbucket{
+  padding: 0 30px;
+  margin: 0 auto;
+  margin-top:10px;
+  margin-bottom: 10%;
+}
+
