@@ -1,8 +1,9 @@
+'use strict'
 // ======= default data =======
 const menu = document.querySelector("#menu");
 const cart = document.querySelector("#cart");
-const totalAmount = document.querySelector("#total-amount");
-const button = document.querySelector("#submit-button");
+const totalAmountBox = document.querySelector("#total-amount");
+const submitButton = document.querySelector("#submit-button");
 
 // 菜單資料
 const productData = [
@@ -65,33 +66,30 @@ const productData = [
 ];
 // ======= 請從這裡開始 =======
 //1.將菜單資料放到menu
-function displayＭenu(products) {
-  let content = ''
+const totalAmountInitValue = '--'
 
-  products.forEach(function (product) {
-    content += `
-    <div class ="grid">
-      <div class="col-3 d-flex justify-content-center">
+function displayMenu(products) {
+  let HTMLContent = ''
+
+  products.forEach(product => {
+    HTMLContent += `
+      <div class="col-3">
         <div class="card">
           <img src="${product.imgUrl}" class="card-img-top" alt="...">
           <div class="card-body">
-            <h4 class="card-title">${product.name}</h4>
+            <h5 class="card-title">${product.name}</h5>
             <p class="card-text">${product.price}</p>
             <button class="btn btn-primary order-btn" id="${product.id}">加入購物車</button>
           </div>
         </div>
       </div>
-    </div>
     `
-    menu.innerHTML = content
   })
+
+  menu.innerHTML = HTMLContent
 }
 
-displayＭenu(productData)
-
-//2. 按下「加入購物車」按鈕後，購物車清單會新增一列資料
-menu.addEventListener('click', function (orderFood) {
-
+function orderFood(event) {
   const target = event.target
   if (!target.classList.contains('order-btn')) {
     return
@@ -105,28 +103,28 @@ menu.addEventListener('click', function (orderFood) {
     }
   }
 
-
   const list = document.createElement('li')
   list.classList.add('list-group-item')
-  list.textContent = `${product.name} X 1`
+  list.textContent = `${product.name} X 1 小計：${product.price}`
   cart.appendChild(list)
 
-  let totalamount = totalAmount.textContent
-  let totalAmountInitValue = '--'
-  if (totalamount === totalAmountInitValue) {
-    totalamount = 0
+  let totalAmount = totalAmountBox.textContent
+  if (totalAmount === totalAmountInitValue) {
+    totalAmount = 0
   } else {
-    totalamount = Number(totalamount)
+    totalAmount = Number(totalAmount)
   }
-  totalAmount.textContent = totalamount + product.price
+  totalAmountBox.textContent = totalAmount + product.price
+}
 
-})
-
-//3. 送出訂單會跳出收據
-button.addEventListener('click', function checkout(event) {
-  const alertMessage = `感謝您的購買！\n總金額：${totalAmount.textContent}元`
+function checkout(event) {
+  const alertMessage = `感謝購買\n總金額：${totalAmountBox.textContent}`
 
   alert(alertMessage)
   totalAmountBox.textContent = totalAmountInitValue
   cart.innerHTML = ''
-})
+}
+
+menu.addEventListener('click', orderFood)
+submitButton.addEventListener('click', checkout)
+displayMenu(productData)
