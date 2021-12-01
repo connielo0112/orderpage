@@ -123,6 +123,7 @@ function checkout(event) {
   alert(alertMessage)
   totalAmountBox.textContent = totalAmountInitValue
   cart.innerHTML = ''
+  
 }
 
 menu.addEventListener('click', orderFood)
