@@ -2,7 +2,15 @@ html,body {
 	font-family: 'Lato','Noto Sans TC', sans-serif;
 	margin: 0;
 	padding: 0;
-  background-color: bisque;
+  position: absolute;
+  right:10%;
+  left: 10%;
+}
+
+header{
+	height: 60px;
+	color: black;
+  box-shadow: 0px 11px 5px -1px rgba(0,0,0,0.26);
 }
 
 #menu{
@@ -11,18 +19,20 @@ html,body {
   justify-content: center;
 }
 
+.img-fluid{
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
 .card{
   margin:20px;
 }
 
 .card-img-top{
-  max-height: 200px;
-}
-
-header{
-	height: 60px;
-	color: black;
-	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.3);
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
 }
 
 nav{
@@ -45,4 +55,5 @@ nav{
   margin-top:10px;
   margin-bottom: 10%;
 }
+
 
