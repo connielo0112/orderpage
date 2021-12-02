@@ -118,9 +118,11 @@ function orderFood(event) {
 }
 
 function checkout(event) {
-  const alertMessage = `感謝購買\n總金額：${totalAmountBox.textContent}`
+  const alertMessage = `感謝您的購買，以下為此次訂單資訊： \n\n總金額：${totalAmountBox.textContent} \n您的餐點：鹽酥雞、四季豆 \n您的數位號碼牌：253`
+  const alertMessage2 = `請返回至師大商圈官方帳號輸入號碼牌資訊`
 
   alert(alertMessage)
+  alert(alertMessage2)
   totalAmountBox.textContent = totalAmountInitValue
   cart.innerHTML = ''
   
